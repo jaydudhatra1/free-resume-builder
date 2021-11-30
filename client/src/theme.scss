@@ -1,4 +1,5 @@
 @use '~@angular/material' as mat;
+@import './sass-variables.scss';
 
 @include mat.core();
 
@@ -6,12 +7,17 @@ $my-primary: mat.define-palette(mat.$indigo-palette);
 $my-accent: mat.define-palette(mat.$pink-palette);
 $my-warn: mat.define-palette(mat.$red-palette);
 
+$my-typography: mat.define-typography-config(
+  $font-family: $app-font-family,
+);
+
 $my-theme: mat.define-light-theme((
  color: (
    primary: $my-primary,
    accent: $my-accent,
    warn: $my-warn,
- )
+ ),
+ typography: $my-typography,
 ));
 
 @include mat.all-component-themes($my-theme);
@@ -50,3 +56,27 @@ $my-theme: mat.define-light-theme((
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+/* -------------------------  Color Variables  --------------------------- */
+$Color_50: mat.get-color-from-palette($my-primary, '50');
+$Color_100: mat.get-color-from-palette($my-primary, '100');
+$Color_200: mat.get-color-from-palette($my-primary, '200');
+$Color_300: mat.get-color-from-palette($my-primary, '300');
+$Color_400: mat.get-color-from-palette($my-primary, '400');
+$Color_500: mat.get-color-from-palette($my-primary, '500');
+$Color_600: mat.get-color-from-palette($my-primary, '600');
+$Color_700: mat.get-color-from-palette($my-primary, '700');
+$Color_800: mat.get-color-from-palette($my-primary, '800');
+$Color_900: mat.get-color-from-palette($my-primary, '900');
+
+$Contrast_50: mat.get-color-from-palette($my-primary, '50-contrast');
+$Contrast_100: mat.get-color-from-palette($my-primary, '100-contrast');
+$Contrast_200: mat.get-color-from-palette($my-primary, '200-contrast');
+$Contrast_300: mat.get-color-from-palette($my-primary, '300-contrast');
+$Contrast_400: mat.get-color-from-palette($my-primary, '400-contrast');
+$Contrast_500: mat.get-color-from-palette($my-primary, '500-contrast');
+$Contrast_600: mat.get-color-from-palette($my-primary, '600-contrast');
+$Contrast_700: mat.get-color-from-palette($my-primary, '700-contrast');
+$Contrast_800: mat.get-color-from-palette($my-primary, '800-contrast');
+$Contrast_900: mat.get-color-from-palette($my-primary, '900-contrast');
+/* ---------------------------------------------------------------------- */

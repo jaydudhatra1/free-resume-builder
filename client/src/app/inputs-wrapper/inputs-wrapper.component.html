@@ -1,0 +1,41 @@
+<div class="content-wrapper p-0">
+  <mat-stepper linear #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Profile</ng-template>
+      <app-user-profile-input [resumeModel]="resumeModel"></app-user-profile-input>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Experience</ng-template>
+      <app-experience-input [resumeModel]="resumeModel"></app-experience-input>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Skills</ng-template>
+      <app-skills-input [resumeModel]="resumeModel"></app-skills-input>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Education</ng-template>
+      <app-skills-input></app-skills-input>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Other</ng-template>
+      <app-other-input [resumeModel]="resumeModel"></app-other-input>
+    </mat-step>
+  </mat-stepper>
+  <!-- <mat-tab-group mat-align-tabs="left">
+    <mat-tab label="Profile">
+      <app-user-profile-input></app-user-profile-input>
+    </mat-tab>
+    <mat-tab label="Experience">
+      <app-experience-input></app-experience-input>
+    </mat-tab>
+    <mat-tab label="Skills">
+      <app-skills-input></app-skills-input>
+    </mat-tab>
+    <mat-tab label="Education">
+      <app-skills-input></app-skills-input>
+    </mat-tab>
+    <mat-tab label="Other">
+      <app-other-input></app-other-input>
+    </mat-tab>
+  </mat-tab-group> -->
+</div>

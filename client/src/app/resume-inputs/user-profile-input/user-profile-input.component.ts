@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile-input',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile-input.component.scss']
 })
 export class UserProfileInputComponent implements OnInit {
+  @Input() resumeModel: any;
 
   constructor() { }
 

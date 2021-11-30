@@ -7,12 +7,14 @@ import { HomeComponent } from './resume-inputs/home/home.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 
-import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserProfileInputComponent } from './resume-inputs/user-profile-input/user-profile-input.component';
@@ -20,6 +22,7 @@ import { ExperienceInputComponent } from './resume-inputs/experience-input/exper
 import { SkillsInputComponent } from './resume-inputs/skills-input/skills-input.component';
 import { EducationInputComponent } from './resume-inputs/education-input/education-input.component';
 import { OtherInputComponent } from './resume-inputs/other-input/other-input.component';
+import { InputsWrapperComponent } from './inputs-wrapper/inputs-wrapper.component';
 
 // TODO: settle material imports to suitable module while module separation
 @NgModule({
@@ -32,7 +35,8 @@ import { OtherInputComponent } from './resume-inputs/other-input/other-input.com
     ExperienceInputComponent,
     SkillsInputComponent,
     EducationInputComponent,
-    OtherInputComponent
+    OtherInputComponent,
+    InputsWrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,9 @@ import { OtherInputComponent } from './resume-inputs/other-input/other-input.com
     MatDividerModule,
     MatTabsModule,
     MatStepperModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule
   ],
   providers: [],
