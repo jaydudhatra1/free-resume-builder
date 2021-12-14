@@ -5,17 +5,65 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <mat-form-field appearance="legacy">
-                <mat-label>First Name</mat-label>
-                <input matInput>
-                <mat-icon matSuffix>user</mat-icon>
-              </mat-form-field>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>First Name</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>Last Name</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>Designation</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>Address</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>Phone number</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field appearance="legacy">
+                  <mat-icon matPrefix>account_circle</mat-icon>
+                  <mat-label>Email Address</mat-label>
+                  <input matInput>
+                </mat-form-field>
+              </div>
+              <!-- <add-custom-input></add-custom-input> -->
             </div>
+
             <div class="col-md-6">
-
+              <div class="row">
+                <mat-icon class="upload-picture-placeholder">image</mat-icon>
+                <button mat-raised-button class="upload-profile-trigger">Upload Profile Picture</button>
+              </div>
+              <div class="row mt-5">
+                <mat-form-field appearance="legacy">
+                  <mat-label>Profile Summary</mat-label>
+                  <textarea matInput class="profile-summary-textarea"></textarea>
+                </mat-form-field>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </mat-card-content>
     </mat-card>
