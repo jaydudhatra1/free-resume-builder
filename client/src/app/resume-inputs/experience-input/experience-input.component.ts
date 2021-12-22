@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./experience-input.component.scss']
 })
 export class ExperienceInputComponent implements OnInit {
-  @Input() resumeModel: any;
 
   constructor() { }
 

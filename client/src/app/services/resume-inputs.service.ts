@@ -5,9 +5,13 @@ import { UserData } from '../helpers/types';
   providedIn: 'root'
 })
 export class ResumeInputsService {
-  private userData: UserData;
+  public userData: UserData;
 
   constructor() {
-    this.userData = {} as any;
+    this.userData = {
+      profile: {} as any,
+      experience: {} as any,
+      skills: {} as any
+    };
   }
 }

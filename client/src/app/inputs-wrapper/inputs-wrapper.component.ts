@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./inputs-wrapper.component.scss']
 })
 export class InputsWrapperComponent implements OnInit {
-  @Input() resumeModel: any;
 
   constructor() { }
 

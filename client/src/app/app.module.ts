@@ -23,6 +23,7 @@ import { SkillsInputComponent } from './resume-inputs/skills-input/skills-input.
 import { EducationInputComponent } from './resume-inputs/education-input/education-input.component';
 import { OtherInputComponent } from './resume-inputs/other-input/other-input.component';
 import { InputsWrapperComponent } from './inputs-wrapper/inputs-wrapper.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // TODO: settle material imports to suitable module while module separation
 @NgModule({
@@ -41,6 +42,8 @@ import { InputsWrapperComponent } from './inputs-wrapper/inputs-wrapper.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
