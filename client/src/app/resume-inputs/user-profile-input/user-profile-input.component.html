@@ -102,7 +102,7 @@
 
               <div class="row mt-3">
                 <mat-icon class="upload-picture-placeholder">image</mat-icon>
-                <button mat-raised-button class="upload-profile-trigger">Upload Profile Picture</button>
+                <button mat-raised-button color="primary" class="upload-profile-trigger">Upload Profile Picture</button>
               </div>
               <div class="row mt-5">
                 <mat-form-field appearance="legacy">
@@ -139,11 +139,11 @@
     </mat-card>
   </form>
   <section class="d-flex justify-content-end mt-3">
-    <button mat-raised-button (click)="saveInputs()">Save</button>
-    <button mat-raised-button [style.margin-left]="'12px'"
+    <button mat-raised-button color="primary" (click)="saveInputs()">Save</button>
+    <button mat-raised-button color="primary" [style.margin-left]="'12px'"
       *ngIf="showAutoPopulate"
       (click)="autoPopulateInputs()">
-      AutopopulateInputs
+      Auto Populate Inputs
     </button>
   </section>
 </div>

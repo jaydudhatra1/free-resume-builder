@@ -15,6 +15,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserProfileInputComponent } from './resume-inputs/user-profile-input/user-profile-input.component';
@@ -24,6 +26,8 @@ import { EducationInputComponent } from './resume-inputs/education-input/educati
 import { OtherInputComponent } from './resume-inputs/other-input/other-input.component';
 import { InputsWrapperComponent } from './inputs-wrapper/inputs-wrapper.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // TODO: settle material imports to suitable module while module separation
 @NgModule({
@@ -52,6 +56,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    DragDropModule,
     BrowserAnimationsModule
   ],
   providers: [],

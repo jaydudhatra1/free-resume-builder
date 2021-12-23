@@ -1,1 +1,79 @@
-<p>experience-input works!</p>
+<div class="content-wrapper">
+  <form>
+    <mat-card>
+      <mat-card-content>
+        <div class="container">
+          <div class="row">
+            <div cdkDropList class="exp-list" (cdkDropListDropped)="drop($event)">
+              <div class="exp-box" *ngFor="let experience of experiences" cdkDrag>
+                <ng-container *ngIf="!experience.isNewItem;">
+                  <div class="exp-custom-placeholder" *cdkDragPlaceholder></div>
+                  <mat-card class="mb-3">
+                    <button mat-icon-button class="close-btn" (click)="deleteItem(experience)">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <h6 class="header m-0">{{experience.role}}</h6>
+                    <span class="secondary-text">
+                      {{experience.organization}},
+                      {{experience.location}},
+                      {{experience.fromDate | date:'MMM yyyy'}} -
+                      {{experience.isPresent ? 'Present' : experience.toDate | date:'MMM yyyy'}}
+                    </span>
+                    <p class="mt-3" [innerHTML]="experience.rteContent"></p>
+                  </mat-card>
+                </ng-container>
+                <ng-container *ngIf="experience.isNewItem;">
+                  <mat-card>
+                    <button mat-icon-button class="close-btn" (click)="deleteItem(experience)">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <form>
+                      <div class="row mt-3">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>From Date</mat-label>
+                          <input matInput required
+                            [(ngModel)]="experience.fromDate"
+                            name="fromDate"
+                            [matDatepicker]="fromPicker">
+                          <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                          <mat-datepicker #fromPicker startView="year"></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col d-flex align-items-center">
+                          <mat-checkbox [(ngModel)]="experience.isPresent" name="isPresent" ngDefaultControl>
+                            To Present
+                          </mat-checkbox>
+                        </div>
+                        <mat-form-field class="col" appearance="legacy">
+                          <mat-label>To Date</mat-label>
+                          <input matInput required [disabled]="experience.isPresent"
+                            [(ngModel)]="experience.toDate"
+                            name="toDate">
+                        </mat-form-field>
+                      </div>
+                      <div class="row mt-3">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>Organization</mat-label>
+                          <input matInput required
+                            [(ngModel)]="experience.organization"
+                            name="organization">
+                        </mat-form-field>
+                      </div>
+                      <div class="mt-3 d-flex justify-content-end">
+                        <button mat-raised-button color="primary" (click)="saveItem(experience)">Save</button>
+                      </div>
+                    </form>
+                  </mat-card>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 d-flex justify-content-end">
+          <button mat-raised-button color="primary" (click)="addNewItem()">Add New Experience</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

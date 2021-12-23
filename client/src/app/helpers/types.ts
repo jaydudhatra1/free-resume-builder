@@ -25,6 +25,7 @@ export type ExperienceInfo = {
   organization: string;
   location: string;
   rteContent: string;
+  isNewItem?: boolean;
 }
 
 export type SkillsInfo = {
