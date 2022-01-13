@@ -19,3 +19,7 @@ mat-icon[matprefix] {
   width: 200px;
   margin: 0 auto;
 }
+
+::ng-deep .filepond--credits {
+  display: none;
+}

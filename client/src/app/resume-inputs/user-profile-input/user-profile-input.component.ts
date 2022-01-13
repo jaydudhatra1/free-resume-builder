@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FilePondComponent } from 'ngx-filepond/filepond.component';
+import { registerPlugin } from 'ngx-filepond';
 import { ResumeInputsService } from 'src/app/services/resume-inputs.service';
 import { Faker } from 'src/app/utils/faker';
 import { environment } from 'src/environments/environment';
+import * as FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
 @Component({
   selector: 'app-user-profile-input',
@@ -13,6 +16,15 @@ export class UserProfileInputComponent implements OnInit {
   public profileInfo = this.resumeService.userData.profile;
   public form: FormGroup;
   public showAutoPopulate = environment.showAutoPopulate;
+  @ViewChild('myPond') myPond: FilePondComponent
+  public pondOptions = {
+    allowMultiple: false,
+    labelIdle: 'Drop files here',
+    allowImagePreview: true,
+    imagePreviewMaxFileSize: '2MB',
+    acceptedFileTypes: 'image/jpeg, image/png',
+  };
+  public pondFiles: any["files"] = []
 
   constructor(
     private resumeService: ResumeInputsService,
@@ -79,6 +91,7 @@ export class UserProfileInputComponent implements OnInit {
         ],
       },
     );
+    registerPlugin(FilePondPluginImagePreview);
   }
 
   saveInputs(): void {
@@ -94,5 +107,17 @@ export class UserProfileInputComponent implements OnInit {
     this.profileInfo.phone = Faker.phone;
     this.profileInfo.altPhone = Faker.phone;
     this.profileInfo.email = Faker.email;
+  }
+
+  pondHandleInit() {
+    console.log('FilePond has initialised', this.myPond);
+  }
+
+  pondHandleAddFile(event: any) {
+    console.log('A file was added', event);
+  }
+
+  pondHandleActivateFile(event: any) {
+    console.log('A file was activated', event)
   }
 }

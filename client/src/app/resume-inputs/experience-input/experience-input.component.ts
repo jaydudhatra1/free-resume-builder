@@ -1,6 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import * as moment from 'moment';
 import { ExperienceInfo } from 'src/app/helpers/types';
 import { ResumeInputsService } from 'src/app/services/resume-inputs.service';
 

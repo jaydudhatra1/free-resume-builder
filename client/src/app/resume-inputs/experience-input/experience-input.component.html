@@ -29,7 +29,7 @@
                     </button>
                     <form>
                       <div class="row mt-3">
-                        <mat-form-field appearance="legacy">
+                        <mat-form-field appearance="legacy" class="col">
                           <mat-label>From Date</mat-label>
                           <input matInput required
                             [(ngModel)]="experience.fromDate"
@@ -37,20 +37,24 @@
                             [matDatepicker]="fromPicker">
                           <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
                           <mat-datepicker #fromPicker startView="year"></mat-datepicker>
+                        </mat-form-field> -
+                        <mat-form-field class="col" appearance="legacy">
+                          <mat-label>To Date</mat-label>
+                          <input matInput required [disabled]="experience.isPresent"
+                            [(ngModel)]="experience.toDate"
+                            name="toDate"
+                            [matDatepicker]="toPicker">
+                          <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+                          <mat-datepicker #toPicker startView="year"></mat-datepicker>
                         </mat-form-field>
                       </div>
                       <div class="row mt-3">
+                        <div class="col"></div>
                         <div class="col d-flex align-items-center">
                           <mat-checkbox [(ngModel)]="experience.isPresent" name="isPresent" ngDefaultControl>
                             To Present
                           </mat-checkbox>
                         </div>
-                        <mat-form-field class="col" appearance="legacy">
-                          <mat-label>To Date</mat-label>
-                          <input matInput required [disabled]="experience.isPresent"
-                            [(ngModel)]="experience.toDate"
-                            name="toDate">
-                        </mat-form-field>
                       </div>
                       <div class="row mt-3">
                         <mat-form-field appearance="legacy">
