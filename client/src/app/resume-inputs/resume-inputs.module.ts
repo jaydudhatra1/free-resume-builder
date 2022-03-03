@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FilePondModule } from 'ngx-filepond';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -24,9 +25,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
     UserProfileInputComponent,
+    ExperienceInputComponent,
     SkillsInputComponent,
     EducationInputComponent,
-    ExperienceInputComponent,
     OtherInputComponent,
   ],
   imports: [

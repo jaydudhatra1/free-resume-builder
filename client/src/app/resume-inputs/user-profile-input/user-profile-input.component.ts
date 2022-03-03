@@ -95,7 +95,7 @@ export class UserProfileInputComponent implements OnInit {
   }
 
   saveInputs(): void {
-    console.log(this.resumeService.userData);
+    // console.log(this.resumeService.userData);
   }
 
   autoPopulateInputs(): void {
@@ -110,14 +110,14 @@ export class UserProfileInputComponent implements OnInit {
   }
 
   pondHandleInit() {
-    console.log('FilePond has initialised', this.myPond);
+    // console.log('FilePond has initialised', this.myPond);
   }
 
   pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
+    // console.log('A file was added', event);
   }
 
   pondHandleActivateFile(event: any) {
-    console.log('A file was activated', event)
+    // console.log('A file was activated', event)
   }
 }

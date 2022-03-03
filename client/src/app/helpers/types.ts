@@ -1,3 +1,5 @@
+import { FormGroup } from "@angular/forms"
+
 export type UserData = {
   profile: ProfileInfo;
   experience: ExperienceInfo[];
@@ -26,6 +28,7 @@ export type ExperienceInfo = {
   location: string;
   rteContent: string;
   isNewItem?: boolean;
+  form?: FormGroup;
 }
 
 export type SkillsInfo = {

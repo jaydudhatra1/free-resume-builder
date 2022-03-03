@@ -9,8 +9,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>account_circle</mat-icon>
                   <mat-label>First Name</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.firstName"
+                  <input matInput
                     formControlName="firstName">
                     <mat-error *ngIf="form.get('firstName').hasError('required')">
                       First Name is required.
@@ -24,8 +23,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>account_circle</mat-icon>
                   <mat-label>Last Name</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.lastName"
+                  <input matInput
                     formControlName="lastName">
                     <mat-error *ngIf="form.get('lastName').hasError('required')">
                       Last Name is required.
@@ -39,8 +37,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>person</mat-icon>
                   <mat-label>Designation</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.designation"
+                  <input matInput
                     formControlName="designation">
                     <mat-error *ngIf="form.get('designation').hasError('required')">
                       Designation is required.
@@ -54,8 +51,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>location_on</mat-icon>
                   <mat-label>Address</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.address"
+                  <input matInput
                     formControlName="address">
                     <mat-error *ngIf="form.get('address').hasError('required')">
                       Address is required.
@@ -69,8 +65,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>phone</mat-icon>
                   <mat-label>Phone number</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.phone"
+                  <input matInput
                     formControlName="phone">
                     <mat-error *ngIf="form.get('phone').hasError('required')">
                       Phone is required.
@@ -84,8 +79,7 @@
                 <mat-form-field appearance="legacy">
                   <mat-icon matPrefix>email</mat-icon>
                   <mat-label>Email Address</mat-label>
-                  <input matInput required
-                    [(ngModel)]="profileInfo.email"
+                  <input matInput
                     formControlName="email">
                     <mat-error *ngIf="form.get('email').hasError('required')">
                       Email is required.
@@ -116,7 +110,6 @@
                 <mat-form-field appearance="legacy">
                   <mat-label>Profile Summary</mat-label>
                   <textarea matInput required class="profile-summary-textarea"
-                    [(ngModel)]="profileInfo.summary"
                     formControlName="summary">
                   </textarea>
                   <mat-error *ngIf="form.get('summary').hasError('required')">
@@ -132,7 +125,6 @@
                   <mat-icon matPrefix>phone</mat-icon>
                   <mat-label>Alternate Phone number</mat-label>
                   <input matInput
-                    [(ngModel)]="profileInfo.altPhone"
                     formControlName="altPhone">
                     <mat-error *ngIf="form.get('altPhone').hasError('maxlength')">
                       Maximum character limit exceeded.

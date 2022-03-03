@@ -10,8 +10,8 @@ export class ResumeInputsService {
   constructor() {
     this.userData = {
       profile: {} as any,
-      experience: {} as any,
-      skills: {} as any
+      experience: [] as any,
+      skills: [] as any
     };
   }
 }
