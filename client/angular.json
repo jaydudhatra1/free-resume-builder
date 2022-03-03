@@ -79,7 +79,8 @@
               "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "client:build:development"
+              "browserTarget": "client:build:development",
+			        "port": 4201
             }
           },
           "defaultConfiguration": "development"
