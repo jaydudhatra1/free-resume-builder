@@ -99,14 +99,14 @@ export class UserProfileInputComponent implements OnInit {
   }
 
   autoPopulateInputs(): void {
-    this.profileInfo.firstName = Faker.firstName;
-    this.profileInfo.lastName = Faker.lastName;
-    this.profileInfo.designation = Faker.designation;
-    this.profileInfo.summary = Faker.jobDescription;
-    this.profileInfo.address = Faker.address;
-    this.profileInfo.phone = Faker.phone;
-    this.profileInfo.altPhone = Faker.phone;
-    this.profileInfo.email = Faker.email;
+    this.form.get('firstName').setValue(Faker.firstName);
+    this.form.get('lastName').setValue(Faker.lastName);
+    this.form.get('designation').setValue(Faker.designation);
+    this.form.get('summary').setValue(Faker.jobDescription);
+    this.form.get('address').setValue(Faker.address);
+    this.form.get('phone').setValue(Faker.phone);
+    this.form.get('altPhone').setValue(Faker.phone);
+    this.form.get('email').setValue(Faker.email);
   }
 
   pondHandleInit() {

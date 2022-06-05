@@ -1,6 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './theme.scss';
 @import './sass-variables.scss';
+@import './material-typography.scss';
 
 @font-face {
   font-family: 'Material Icons';
@@ -44,6 +45,7 @@ body {
 
 .content-wrapper {
   padding: 12px;
+  background-color: #f8f8f8;
 }
 
 // Move these to typography

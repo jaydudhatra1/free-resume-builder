@@ -8,6 +8,16 @@
       right: 8px;
       top: 8px;
     }
+
+    .edit-btn {
+      position: absolute;
+      right: 50px;
+      top: 8px;
+    }
+    .secondary-text {
+      max-width: calc(100% - 64px);
+      display: block;
+    }
   }
 }
 

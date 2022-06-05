@@ -84,57 +84,19 @@ export class ExperienceInputComponent implements OnInit {
       isNewItem: true,
     };
 
-    const form = this.formBuilder.group(
-      {
-        fromDate: [
-          newExperienceItem.fromDate,
-          [
-            Validators.required,
-            Validators.maxLength(256)
-          ]
-        ],
-        toDate: [
-          newExperienceItem.toDate,
-          [
-            Validators.required,
-            Validators.maxLength(256)
-          ]
-        ],
-        isPresent: [
-          newExperienceItem.isPresent
-        ],
-        organization: [
-          newExperienceItem.organization,
-          [
-            Validators.required,
-            Validators.maxLength(256)
-          ]
-        ],
-        location: [
-          newExperienceItem.location,
-          [
-            Validators.required,
-            Validators.maxLength(256)
-          ]
-        ],
-        role: [
-          newExperienceItem.role,
-          [
-            Validators.required,
-            Validators.maxLength(256)
-          ]
-        ],
-        rteContent: [
-          newExperienceItem.rteContent
-        ],
-      },
-    );
-    newExperienceItem["form"] = form;
+
+    newExperienceItem["form"] = this.getExperienceForm(newExperienceItem);
     this.experiences.push(newExperienceItem);
   }
 
-  deleteItem(experience: ExperienceInfo): void {
+  deleteItem(experience: ExperienceInfo, index: number): void {
     // code to delete Item
+    this.experiences.splice(index, 1);
+  }
+
+  editItem(experience: ExperienceInfo, index: number): void {
+    this.experiences[index].isNewItem = true;
+    this.experiences[index].form = this.getExperienceForm(this.experiences[index]);
   }
 
   saveItem(experience: ExperienceInfo, index: number): void {
@@ -142,5 +104,53 @@ export class ExperienceInputComponent implements OnInit {
     experience.fromDate = moment(experience.fromDate).toISOString();
     experience.isNewItem = false;
     this.experiences[index] = experience;
+  }
+
+  private getExperienceForm(experienceItem): FormGroup {
+    return this.formBuilder.group(
+      {
+        fromDate: [
+          experienceItem.fromDate,
+          [
+            Validators.required,
+            Validators.maxLength(256)
+          ]
+        ],
+        toDate: [
+          experienceItem.toDate,
+          [
+            Validators.required,
+            Validators.maxLength(256)
+          ]
+        ],
+        isPresent: [
+          experienceItem.isPresent
+        ],
+        organization: [
+          experienceItem.organization,
+          [
+            Validators.required,
+            Validators.maxLength(256)
+          ]
+        ],
+        location: [
+          experienceItem.location,
+          [
+            Validators.required,
+            Validators.maxLength(256)
+          ]
+        ],
+        role: [
+          experienceItem.role,
+          [
+            Validators.required,
+            Validators.maxLength(256)
+          ]
+        ],
+        rteContent: [
+          experienceItem.rteContent
+        ],
+      },
+    );
   }
 }

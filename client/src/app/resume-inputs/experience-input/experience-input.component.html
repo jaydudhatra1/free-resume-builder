@@ -9,13 +9,18 @@
                 <ng-container *ngIf="!experience.isNewItem;">
                   <div class="exp-custom-placeholder" *cdkDragPlaceholder></div>
                   <mat-card class="mb-3">
-                    <button mat-icon-button class="close-btn" (click)="deleteItem(experience)">
-                      <mat-icon>close</mat-icon>
+                    <button mat-icon-button class="edit-btn" (click)="editItem(experience, index)">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button class="ml-2 close-btn" (click)="deleteItem(experience, index)">
+                      <mat-icon>delete</mat-icon>
                     </button>
                     <h6 class="header m-0">{{experience.role}}</h6>
                     <span class="secondary-text">
                       {{experience.organization}},
-                      {{experience.location}},
+                      {{experience.location}}
+                    </span>
+                    <span class="secondary-text">
                       {{experience.fromDate | date:'MMM yyyy'}} -
                       {{experience.isPresent ? 'Present' : experience.toDate | date:'MMM yyyy'}}
                     </span>
@@ -25,8 +30,8 @@
               </div>
               <ng-container *ngIf="experience.isNewItem;">
                 <mat-card>
-                  <button mat-icon-button class="close-btn" (click)="deleteItem(experience)">
-                    <mat-icon>close</mat-icon>
+                  <button mat-icon-button class="close-btn" (click)="deleteItem(experience, index)">
+                    <mat-icon>delete</mat-icon>
                   </button>
                   <form [formGroup]="experience.form">
 
