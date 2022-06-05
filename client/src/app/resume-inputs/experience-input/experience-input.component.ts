@@ -5,6 +5,8 @@ import { ExperienceInfo } from 'src/app/helpers/types';
 import { ResumeInputsService } from 'src/app/services/resume-inputs.service';
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import * as moment from 'moment';
+import { Faker } from 'src/app/utils/faker';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-experience-input',
@@ -15,6 +17,7 @@ export class ExperienceInputComponent implements OnInit {
   public experiences: ExperienceInfo[] = this.resumeService.userData.experience;
   public form: FormGroup;
   public Editor = ClassicEditor;
+  public showAutoPopulate = environment.showAutoPopulate;
 
   constructor(
     private resumeService: ResumeInputsService,
@@ -104,6 +107,22 @@ export class ExperienceInputComponent implements OnInit {
     experience.fromDate = moment(experience.fromDate).toISOString();
     experience.isNewItem = false;
     this.experiences[index] = experience;
+  }
+
+  autoPopulateInputs(experienceItem: ExperienceInfo): void {
+    experienceItem.form.reset();
+
+    experienceItem.form.get('fromDate').patchValue(Faker.pastdate);
+
+    // Radomly set present or any other end date
+    Faker.randomBool ?
+      experienceItem.form.get('toDate').patchValue(Faker.recentDate):
+      experienceItem.form.get('isPresent').patchValue(Faker.recentDate);
+
+    experienceItem.form.get('organization').patchValue(Faker.companyNameWithSuffix);
+    experienceItem.form.get('location').patchValue(Faker.cityCountry);
+    experienceItem.form.get('role').patchValue(Faker.designation);
+    experienceItem.form.get('rteContent').patchValue(Faker.paragraphs);
   }
 
   private getExperienceForm(experienceItem): FormGroup {

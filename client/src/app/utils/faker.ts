@@ -28,4 +28,32 @@ export class Faker {
   public static get email(): string {
     return faker.internet.email();
   }
+
+  public static get date(): string {
+    return faker.date.between();
+  }
+
+  public static get pastdate(): string {
+    return faker.date.past();
+  }
+
+  public static get recentDate(): string {
+    return faker.date.recent();
+  }
+
+  public static get randomBool(): boolean {
+    return faker.datatype.boolean();
+  }
+
+  public static get companyNameWithSuffix(): string {
+    return faker.company.companyName() + " " + faker.company.companySuffix();
+  }
+
+  public static get paragraphs(): string {
+    return faker.lorem.paragraphs();
+  }
+
+  public static get cityCountry(): string {
+    return faker.fake("{{address.city}}, {{address.country}}");
+  }
 }
