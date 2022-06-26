@@ -29,7 +29,7 @@
                 </ng-container>
               </div>
               <ng-container *ngIf="experience.isNewItem;">
-                <mat-card>
+                <mat-card class="mb-3">
                   <button mat-icon-button class="close-btn" (click)="deleteItem(experience, index)">
                     <mat-icon>delete</mat-icon>
                   </button>
@@ -103,7 +103,7 @@
 
                     <div class="mt-3 d-flex justify-content-end">
                       <button mat-raised-button color="primary" (click)="saveItem(experience, index)">Save</button>
-                      <button mat-raised-button color="primary" (click)="autoPopulateInputs(experience)" *ngIf="showAutoPopulate">Auto Populate</button>
+                      <button mat-raised-button color="primary" (click)="autoPopulateInputs(experience)" class="ms-2" *ngIf="showAutoPopulate">Auto Populate</button>
                     </div>
                   </form>
                 </mat-card>

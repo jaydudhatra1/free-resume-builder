@@ -103,10 +103,14 @@ export class ExperienceInputComponent implements OnInit {
   }
 
   saveItem(experience: ExperienceInfo, index: number): void {
-    experience = {...experience.form.value};
-    experience.fromDate = moment(experience.fromDate).toISOString();
-    experience.isNewItem = false;
-    this.experiences[index] = experience;
+    if (experience.form.valid) {
+      experience = {...experience.form.value};
+      experience.fromDate = moment(experience.fromDate).toISOString();
+      experience.isNewItem = false;
+      this.experiences[index] = experience;
+    } else {
+      experience.form.markAllAsTouched();
+    }
   }
 
   autoPopulateInputs(experienceItem: ExperienceInfo): void {

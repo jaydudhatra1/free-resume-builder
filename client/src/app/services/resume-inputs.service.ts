@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserData } from '../helpers/types';
+import { SkillsInfo, UserData } from '../helpers/types';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,10 @@ export class ResumeInputsService {
     this.userData = {
       profile: {} as any,
       experience: [] as any,
-      skills: [] as any
+      skills: {
+        isCategorywiseSkill: false,
+        skillItems: []
+      } as SkillsInfo
     };
   }
 }

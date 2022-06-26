@@ -56,4 +56,17 @@ export class Faker {
   public static get cityCountry(): string {
     return faker.fake("{{address.city}}, {{address.country}}");
   }
+
+  public static get skill(): string {
+    return faker.random.arrayElement(FAKER_SKILLS);
+  }
+
+  public static get randomNumber() {
+    return faker.mersenne.rand(10, 1);
+  }
 }
+
+
+
+
+const FAKER_SKILLS = ["C++", "HTML 5", "CSS", "Angular 2+", "DotNet Core", "Electron.js", "Node.js", "MySQL", "MSSSQL", "MongoDB"]; 

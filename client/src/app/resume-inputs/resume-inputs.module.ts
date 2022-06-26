@@ -19,7 +19,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FilePondModule } from 'ngx-filepond';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
+import {MatSliderModule} from '@angular/material/slider';
 
 
 @NgModule({
@@ -44,8 +44,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatCheckboxModule,
     MatIconModule,
     MatButtonModule,
+    MatSliderModule,
+
     DragDropModule,
     FilePondModule,
+    
     CKEditorModule
   ],
   exports: [

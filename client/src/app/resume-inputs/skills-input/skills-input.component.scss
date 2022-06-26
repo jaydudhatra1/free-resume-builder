@@ -1,0 +1,14 @@
+.content-wrapper {
+    .container {
+    }
+}
+
+
+::ng-deep .skill-box {
+    display: flex;
+    align-items: center;
+
+    .drag-handle {
+        cursor: move;
+    }
+}

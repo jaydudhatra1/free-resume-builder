@@ -33,7 +33,7 @@ export type ExperienceInfo = {
 
 export type SkillsInfo = {
   isCategorywiseSkill: boolean;
-  skillItems: CategorySkillItem[] | SkillItem[];
+  skillItems: SkillItem[];
 }
 
 export type CategorySkillItem = {
@@ -45,5 +45,7 @@ export type SkillItem = {
   skillName: string;
   rating: number;
   hasIcon: boolean;
-  ratingLabel: string; // Excellent, Advance, intermidiate, beginner
+  isNewItem?: boolean;
+  form?: FormGroup;
+  // ratingLabel: string; // Excellent, Advance, intermidiate, beginner
 }
