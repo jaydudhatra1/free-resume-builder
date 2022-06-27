@@ -22,9 +22,6 @@ export class SkillsInputComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    if(!this.skills.length) {
-      this.addNewItem();
-    }
   }
 
   public get skills(): SkillItem[] {

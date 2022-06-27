@@ -64,9 +64,14 @@ export class Faker {
   public static get randomNumber() {
     return faker.mersenne.rand(10, 1);
   }
+
+  public static get education(): string {
+    return faker.random.arrayElement(FAKER_EDUCATION);
+  }
 }
 
 
 
 
 const FAKER_SKILLS = ["C++", "HTML 5", "CSS", "Angular 2+", "DotNet Core", "Electron.js", "Node.js", "MySQL", "MSSSQL", "MongoDB"]; 
+const FAKER_EDUCATION = ["MA in English Literature", "BA in History Literature", "B.Tech in Computer Science", "PHD in Geothermal Energy", "Masters in Information Technology"]; 

@@ -14,7 +14,8 @@ export class ResumeInputsService {
       skills: {
         isCategorywiseSkill: false,
         skillItems: []
-      } as SkillsInfo
+      } as SkillsInfo,
+      education: []
     };
   }
 }

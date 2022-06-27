@@ -4,7 +4,7 @@ export type UserData = {
   profile: ProfileInfo;
   experience: ExperienceInfo[];
   skills: SkillsInfo;
-
+  education: EducationInfo[];
 }
 
 export type ProfileInfo = {
@@ -48,4 +48,14 @@ export type SkillItem = {
   isNewItem?: boolean;
   form?: FormGroup;
   // ratingLabel: string; // Excellent, Advance, intermidiate, beginner
+}
+
+export type EducationInfo = {
+  degreeName: string;
+  fromDate: string;
+  toDate?: string;
+  rteContent: string;
+  location: string;
+  isNewItem?: boolean;
+  form?: FormGroup;
 }

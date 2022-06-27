@@ -1,0 +1,8 @@
+::ng-deep .education-box {
+    display: flex;
+    align-items: center;
+
+    .drag-handle {
+        cursor: move;
+    }
+}
